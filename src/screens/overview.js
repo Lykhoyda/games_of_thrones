@@ -1,52 +1,77 @@
 import React from 'react'
-import {useHouses} from '../utils/houses'
+import {useHousesInfinite} from '../utils/houses'
 import {HousesRow} from '../components/houses-row'
-import {HousesUL} from '../components/lib'
+import {HousesUL, Spinner} from '../components/lib'
 import styled from '@emotion/styled'
+import useInfiniteScroll from 'react-infinite-scroll-hook'
+import {getIdFromURL} from '../utils/url'
+import gotLogoGold from 'assets/got-logo-gold.png'
 
 function OverviewScreen() {
-  const houses = useHouses()
+  const {data, fetchNextPage, hasNextPage, isLoading, error} = useHousesInfinite()
+  const [sentryRef] = useInfiniteScroll({
+    loading: isLoading,
+    hasNextPage,
+    onLoadMore: fetchNextPage,
+    disabled: !!error,
+    rootMargin: '0px 0px 600px 0px',
+  })
+
+
+  if (isLoading) {
+    return (
+      <SpinnerContainer>
+        <Spinner />
+      </SpinnerContainer>
+    )
+  }
 
   return (
-    <Grid>
-      <SidebarLeft>
-        Left
-      </SidebarLeft>
-      <MainContent>
-    <HousesUL>
-      {houses?.map(house => {
-        return (
-          <li key={house.name} aria-label={house.name}>
-            <HousesRow house={house} />
-          </li>)
-      })}
-    </HousesUL>
-      </MainContent>
-      <SidebarRight>
-        Right
-      </SidebarRight>
-    </Grid>
+    <MainContent>
+      <Header>
+        <Logo src={gotLogoGold} />
+      </Header>
+      <HousesUL>
+        {data?.pages.map((page) =>
+          page.map(house =>
+            (
+              <li key={`${house.name}-${getIdFromURL(house.url)}`} aria-label={house.name}>
+                <HousesRow house={house} />
+              </li>)))}
+
+      </HousesUL>
+      {(isLoading || hasNextPage) && (
+        <SpinnerContainer ref={sentryRef}>
+          <Spinner />
+        </SpinnerContainer>
+      )}
+    </MainContent>
   )
 }
 
-const Grid = styled.div({
-  display: 'grid',
-  gridTemplateAreas: `"sidebarLeft mainContent sidebarRight"`,
-  gridTemplateColumns: '20% 1fr 20%',
-  gridTemplateRows: 'auto'
-})
+const MainContent = styled('div')`
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+`
 
-const MainContent = styled.div({
-  'grid-area': 'mainContent',
-  textAlign: 'center'
-})
+const Header = styled('header')`
+  text-align: center;
+`
 
-const SidebarLeft = styled.div({
-  'grid-area': 'sidebarLeft'
-})
+const Logo = styled('img')`
+  margin: 20px auto;
+  display: block;
+  max-width: 320px;
+  width: 100%;
+`
 
-const SidebarRight = styled.div({
-  'grid-area': 'sidebarRight'
-})
+const SpinnerContainer = styled('li')`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+`
 
 export {OverviewScreen}

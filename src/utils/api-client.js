@@ -12,7 +12,6 @@ async function client(endpoint, data) {
     if (response.ok) {
       return data;
     } else {
-
       return Promise.reject(data);
     }
   });
