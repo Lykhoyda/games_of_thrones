@@ -1,37 +1,17 @@
 import {client} from './api-client'
-import {useInfiniteQuery, useQuery} from 'react-query'
+import {useQuery} from 'react-query'
 
-// As an Api doesn't return the data about the current and total page
-// I decided to hardcode this values
-const HOUSES_AMOUNT = 444
+const API_HOUSES_AMOUNT = 444
 const PAGE_SIZE = 15
-const PAGES = Math.round(HOUSES_AMOUNT / PAGE_SIZE)
-console.log(PAGES)
-let paginator = 1
+const PAGINATION_STEPS = Math.round(API_HOUSES_AMOUNT / PAGE_SIZE)
 
-const fetchInfiniteHouses = ({pageParam = paginator}) => {
-  if(pageParam) {
-    return client(`houses?page=${encodeURIComponent(pageParam)}&pageSize=${PAGE_SIZE}`).then(res => {
-      ++paginator
-      return res
-    })
-  }
-}
+const useHouses = (pageNumber = 1) => {
+  const {data, isLoading, refetch} = useQuery({
+    queryKey: ['houses'],
+    queryFn: () => client(`houses?page=${encodeURIComponent(pageNumber)}&pageSize=${PAGE_SIZE}`).then(data => data),
+  })
 
-function useHousesInfinite() {
-  const {data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading, error} = useInfiniteQuery(
-    'houses',
-    fetchInfiniteHouses,
-    {
-      getNextPageParam: (lastPage, pages) => {
-        if (lastPage.length) {
-          return paginator
-        }
-        return undefined
-      },
-    },
-  )
-  return {data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading, error}
+  return {data, refetch, isLoading}
 }
 
 function useHouse(houseId) {
@@ -43,4 +23,4 @@ function useHouse(houseId) {
   return {data, isLoading}
 }
 
-export {useHouse, useHousesInfinite}
+export {useHouse, useHouses, PAGINATION_STEPS}

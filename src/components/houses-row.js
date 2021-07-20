@@ -34,6 +34,9 @@ const useStyles = makeStyles({
   learnMore: {
     color: colors.text,
   },
+  cardActions: {
+    justifyContent: 'flex-end',
+  },
 })
 
 function HousesRow({house}) {
@@ -59,7 +62,7 @@ function HousesRow({house}) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions className={classes.cardActions}>
         <Link to={`/house/${getIdFromURL(house.url)}`} css={{
           textDecoration: 'none',
           color: colors.text,

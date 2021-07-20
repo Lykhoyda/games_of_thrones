@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {BrowserRouter as Router} from 'react-router-dom'
 import {QueryClient, QueryClientProvider} from 'react-query'
+import {createTheme, ThemeProvider} from '@material-ui/core'
 
 const queryConfig = {
   queries: {
@@ -11,12 +12,20 @@ const queryConfig = {
 
 const queryClient = new QueryClient({defaultOptions: queryConfig})
 
+const darkTheme = createTheme({
+  palette: {
+    type: 'dark',
+  },
+});
+
 function AppProviders({children}) {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
-        {children}
-      </Router>
+      <ThemeProvider theme={darkTheme}>
+        <Router>
+          {children}
+        </Router>
+      </ThemeProvider>
     </QueryClientProvider>
   )
 }

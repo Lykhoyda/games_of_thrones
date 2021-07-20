@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 import backgroundImage from 'assets/wallpaper.jpeg'
 import * as colors from '../styles/colors'
-import {rgba} from 'emotion-rgba'
 import loadingSpinner from 'assets/loader-spinner.png'
 import {keyframes} from '@emotion/react'
 
@@ -21,28 +20,8 @@ const HousesUL = styled('ul')`
   padding: 0;
   display: grid;
   grid-template-rows: auto;
-  grid-gap: 1em;
+  grid-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr;
-`
-
-const Row = styled('div')`
-  padding: 10px 20px;
-  background: ${rgba(colors.grey, 0.7)};
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25),
-  0 2px 2px rgba(0, 0, 0, 0.20),
-  0 4px 4px rgba(0, 0, 0, 0.15),
-  0 8px 8px rgba(0, 0, 0, 0.10),
-  0 16px 16px rgba(0, 0, 0, 0.05);
-  min-height: 150px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background: ${rgba(colors.grey, 0.85)};
-  }
 `
 
 const rotateAnimation = keyframes`
