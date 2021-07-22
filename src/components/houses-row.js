@@ -16,10 +16,53 @@ import {
 } from '@material-ui/core'
 import {getHouseImage} from '../utils/images'
 
+function HousesRow({house}) {
+  const [imgSrc] = useState(() => getHouseImage(house.name))
+  const classes = useStyles()
+
+  return (
+    <Card className={classes.root} variant="outlined">
+      <CardActionArea className={classes.cardActionArea}>
+        <CardMedia
+          className={classes.mediaCard}
+          component="img"
+          alt={house.name}
+          height="140"
+          image={imgSrc}
+          title={house.name}
+        />
+        <CardContent>
+          <Typography
+            className={classes.text}
+            gutterBottom
+            variant="h5"
+            component="h2"
+          >
+            {house.name}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions className={classes.cardActions}>
+        <Link
+          to={`/house/${getIdFromURL(house.url)}`}
+          css={{
+            textDecoration: 'none',
+            color: colors.text,
+          }}
+        >
+          <Button className={classes.learnMore} size="small" color="primary">
+            Learn More
+          </Button>
+        </Link>
+      </CardActions>
+    </Card>
+  )
+}
+
 const useStyles = makeStyles({
   root: {
     maxWidth: '345px',
-    backgroundColor: rgba(colors.grey, 0.90),
+    backgroundColor: rgba(colors.grey, 0.9),
     color: colors.text,
   },
   card: {
@@ -38,45 +81,11 @@ const useStyles = makeStyles({
     justifyContent: 'flex-end',
   },
   cardActionArea: {
-    textAlign: 'center'
+    textAlign: 'center',
   },
   text: {
-    fontFamily: 'got-font'
-  }
+    fontFamily: 'got-font',
+  },
 })
-
-function HousesRow({house}) {
-  const [imgSrc] = useState(() => getHouseImage(house.name))
-  const classes = useStyles()
-
-  return (
-    <Card className={classes.root} variant='outlined'>
-      <CardActionArea className={classes.cardActionArea}>
-        <CardMedia className={classes.mediaCard}
-                   component='img'
-                   alt='Contemplative Reptile'
-                   height='140'
-                   image={imgSrc}
-                   title='Contemplative Reptile'
-        />
-        <CardContent>
-          <Typography className={classes.text} gutterBottom variant='h5' component='h2'>
-            {house.name}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions className={classes.cardActions}>
-        <Link to={`/house/${getIdFromURL(house.url)}`} css={{
-          textDecoration: 'none',
-          color: colors.text,
-        }}>
-          <Button className={classes.learnMore} size='small' color='primary'>
-            Learn More
-          </Button>
-        </Link>
-      </CardActions>
-    </Card>
-  )
-}
 
 export {HousesRow}

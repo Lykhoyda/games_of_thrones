@@ -24,13 +24,17 @@ function OverviewScreen() {
         <Logo src={gotLogoGold} />
       </Header>
       <HousesUL>
-        <Grid container direction='row' justifyContent='center' spacing={3}>
+        <Grid container direction="row" justifyContent="center" spacing={3}>
           {houses?.map(house => (
-            <Grid item xs={12} sm={6} md={4} justifyContent='center' al>
-              <ListItem key={`${house.name}-${getIdFromURL(house.url)}`} aria-label={house.name}>
+            <Grid item xs={12} sm={6} md={4} justifyContent="center" al>
+              <ListItem
+                key={`${house.name}-${getIdFromURL(house.url)}`}
+                aria-label={house.name}
+              >
                 <HousesRow house={house} />
               </ListItem>
-            </Grid>))}
+            </Grid>
+          ))}
         </Grid>
       </HousesUL>
       <PaginationCustom page={page} setPage={setPage} />

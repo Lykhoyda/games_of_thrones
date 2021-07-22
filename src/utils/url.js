@@ -1,4 +1,4 @@
-function getIdFromURL(url){
+function getIdFromURL(url) {
   return url.split('/').pop()
 }
 

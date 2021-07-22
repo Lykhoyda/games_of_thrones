@@ -16,15 +16,13 @@ const darkTheme = createTheme({
   palette: {
     type: 'dark',
   },
-});
+})
 
 function AppProviders({children}) {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={darkTheme}>
-        <Router>
-          {children}
-        </Router>
+        <Router>{children}</Router>
       </ThemeProvider>
     </QueryClientProvider>
   )

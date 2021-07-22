@@ -53,7 +53,8 @@ const Spinner = styled('div')`
   height: 46px;
   width: 46px;
   background: url(${loadingSpinner}) no-repeat;
-  animation: ${rotateAnimation} 2s infinite cubic-bezier(0.455, .03, .515, .955);
+  animation: ${rotateAnimation} 2s infinite
+    cubic-bezier(0.455, 0.03, 0.515, 0.955);
 `
 
 const FullPageSpinnerWrapper = styled('div')`
@@ -67,7 +68,7 @@ const FullPageSpinnerWrapper = styled('div')`
   left: 0;
   bottom: 0;
   right: 0;
-  
+
   &:before {
     content: '';
     display: block;

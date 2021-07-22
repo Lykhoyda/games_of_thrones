@@ -5,7 +5,6 @@ import reportWebVitals from './reportWebVitals'
 import {AppProviders} from './context'
 import 'styles/global.css'
 
-
 ReactDOM.render(
   <AppProviders>
     <App />

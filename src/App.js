@@ -7,8 +7,8 @@ import {FullPageSpinner} from './components/lib'
 function App() {
   return (
     <React.Suspense fallback={<FullPageSpinner />}>
-      <Route exact path='/' component={OverviewScreen} />
-      <Route path='/house/:houseId' component={HouseScreen} />
+      <Route exact path="/" component={OverviewScreen} />
+      <Route path="/house/:houseId" component={HouseScreen} />
     </React.Suspense>
   )
 }

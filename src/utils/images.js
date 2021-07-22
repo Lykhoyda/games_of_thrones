@@ -24,11 +24,11 @@ const imagesCollection = [
 function getHouseImage(houseName) {
   let imgSrc
 
-  imagesCollection.forEach((imgData => {
+  imagesCollection.forEach(imgData => {
     if (houseName.includes(imgData.name)) {
       imgSrc = imgData.src
     }
-  }))
+  })
 
   if (imgSrc) {
     return imgSrc

@@ -3,7 +3,15 @@ import React from 'react'
 import {useHouse} from '../utils/houses'
 import {useHistory, useParams} from 'react-router-dom'
 import styled from '@emotion/styled'
-import {Button, Divider, List, ListItem, makeStyles, Paper, Typography} from '@material-ui/core'
+import {
+  Button,
+  Divider,
+  List,
+  ListItem,
+  makeStyles,
+  Paper,
+  Typography,
+} from '@material-ui/core'
 import {FullPageSpinner, PageBackground, Wrapper} from '../components/lib'
 import {getHouseImage} from '../utils/images'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
@@ -13,9 +21,15 @@ import {device} from '../styles/media-queries'
 function HouseScreen() {
   const {houseId} = useParams()
   const {data: house = {}, isLoading} = useHouse(houseId)
-  const {seats, name, region, words, diedOut, founded, founder} = house
+  const {seats, name, region, words, diedOut, founded} = house
   const history = useHistory()
   const classes = useStyles()
+
+  const renderListItem = (columnName, data) => (
+    <ListItem>
+      {columnName}: {data || UNKNOWN}
+    </ListItem>
+  )
 
   if (isLoading) return <FullPageSpinner />
 
@@ -23,8 +37,8 @@ function HouseScreen() {
     <PageBackground>
       <Wrapper>
         <Button
-          variant='contained'
-          color='default'
+          variant="contained"
+          color="default"
           className={classes.goBackButton}
           onClick={() => history.goBack()}
           startIcon={<ArrowBackIcon />}
@@ -35,32 +49,40 @@ function HouseScreen() {
           <Grid>
             <LogoColumn>
               <HouseLogo src={getHouseImage(name)} alt={`house-${name}`} />
-              <Typography className={classes.text} gutterBottom align='center' variant='h5' component='h5'>
+              <Typography
+                className={classes.text}
+                gutterBottom
+                align="center"
+                variant="h5"
+                component="h5"
+              >
                 Region {region}
               </Typography>
             </LogoColumn>
             <div>
-              <Typography className={classes.text} gutterBottom align='center' variant='h4' component='h2'>
+              <Typography
+                className={classes.text}
+                gutterBottom
+                align="center"
+                variant="h4"
+                component="h2"
+              >
                 {name}
               </Typography>
-              <Typography gutterBottom align='center' variant='h4' component='h2'>
+              <Typography
+                gutterBottom
+                align="center"
+                variant="h4"
+                component="h2"
+              >
                 {words}
               </Typography>
               <Divider />
               <Content className={classes.listItems}>
                 <List>
-                  <ListItem>
-                    Died Out: {diedOut || UNKNOWN}
-                  </ListItem>
-                  <ListItem>
-                    Founder: {founder || UNKNOWN}
-                  </ListItem>
-                  <ListItem>
-                    Founded: {founded || UNKNOWN}
-                  </ListItem>
-                  <ListItem>
-                    Seats: {seats.join(',') || UNKNOWN}
-                  </ListItem>
+                  {renderListItem('Died Out', diedOut)}
+                  {renderListItem('Founded', founded)}
+                  {renderListItem('Seats', seats.join(','))}
                 </List>
               </Content>
             </div>
@@ -91,7 +113,7 @@ const Grid = styled('div')`
   padding-top: 20px;
   display: grid;
   grid-template-columns: auto;
-  
+
   @media ${device.md} {
     grid-template-columns: 30% 1fr;
   }
