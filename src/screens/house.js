@@ -1,71 +1,68 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react'
 import {useHouse} from '../utils/houses'
-import {useParams, useHistory} from 'react-router-dom'
+import {useHistory, useParams} from 'react-router-dom'
 import styled from '@emotion/styled'
-import {Divider, Link, makeStyles, Paper, Typography} from '@material-ui/core'
-import {PageBackground} from '../components/lib'
+import {Button, Divider, List, ListItem, makeStyles, Paper, Typography} from '@material-ui/core'
+import {FullPageSpinner, PageBackground, Wrapper} from '../components/lib'
 import {getHouseImage} from '../utils/images'
-
-const useStyles = makeStyles({
-  root: {
-    minHeight: '85vh'
-  },
-  link: {
-    display: 'block',
-    marginBottom: '20px',
-  },
-})
+import ArrowBackIcon from '@material-ui/icons/ArrowBack'
+import {UNKNOWN} from '../utils/constants'
+import {device} from '../styles/media-queries'
 
 function HouseScreen() {
   const {houseId} = useParams()
   const {data: house = {}, isLoading} = useHouse(houseId)
-  const {seats, name, region, words} = house
+  const {seats, name, region, words, diedOut, founded, founder} = house
   const history = useHistory()
   const classes = useStyles()
 
-  if (isLoading) {
-    return null
-  }
-
-  const renderListItem = (data, heading) => {
-    return data && (
-        <>
-          <Typography variant='body1' component='div'>
-            {heading}:
-          </Typography>
-          <ul>
-            {data?.map(title => {
-              return <li>{title}</li>
-            })}
-          </ul>
-        </>
-      )
-    }
-
+  if (isLoading) return <FullPageSpinner />
 
   return (
     <PageBackground>
       <Wrapper>
-        <Link className={classes.link} color='inherit' onClick={() => history.goBack()}>Go back</Link>
+        <Button
+          variant='contained'
+          color='default'
+          className={classes.goBackButton}
+          onClick={() => history.goBack()}
+          startIcon={<ArrowBackIcon />}
+        >
+          Go back
+        </Button>
         <Paper className={classes.root}>
           <Grid>
             <LogoColumn>
               <HouseLogo src={getHouseImage(name)} alt={`house-${name}`} />
-              <Typography gutterBottom align='left' variant='h5' component='div'>
+              <Typography className={classes.text} gutterBottom align='center' variant='h5' component='h5'>
                 Region {region}
               </Typography>
             </LogoColumn>
             <div>
-              <Typography gutterBottom align='center' variant='h3' component='h2'>
+              <Typography className={classes.text} gutterBottom align='center' variant='h4' component='h2'>
                 {name}
               </Typography>
               <Typography gutterBottom align='center' variant='h4' component='h2'>
                 {words}
               </Typography>
               <Divider />
-
-              {renderListItem(seats, 'Seats')}
+              <Content className={classes.listItems}>
+                <List>
+                  <ListItem>
+                    Died Out: {diedOut || UNKNOWN}
+                  </ListItem>
+                  <ListItem>
+                    Founder: {founder || UNKNOWN}
+                  </ListItem>
+                  <ListItem>
+                    Founded: {founded || UNKNOWN}
+                  </ListItem>
+                  <ListItem>
+                    Seats: {seats.join(',') || UNKNOWN}
+                  </ListItem>
+                </List>
+              </Content>
             </div>
           </Grid>
         </Paper>
@@ -74,19 +71,30 @@ function HouseScreen() {
   )
 }
 
-const Wrapper = styled('div')`
-  max-width: 1200px;
-  width: 100%;
-  padding: 0 20px;
-  margin: auto;
-  color: white;
-  height: 100%;
-`
+const useStyles = makeStyles({
+  goBackButton: {
+    margin: '20px 0',
+  },
+  root: {
+    minHeight: '85vh',
+  },
+  link: {
+    display: 'block',
+    marginBottom: '20px',
+  },
+  text: {
+    fontFamily: 'got-font',
+  },
+})
 
 const Grid = styled('div')`
   padding-top: 20px;
   display: grid;
-  grid-template-columns: 30% 1fr;
+  grid-template-columns: auto;
+  
+  @media ${device.md} {
+    grid-template-columns: 30% 1fr;
+  }
 `
 
 const LogoColumn = styled('div')`
@@ -100,8 +108,11 @@ const HouseLogo = styled('img')`
   display: block;
   max-width: 240px;
   width: 100%;
+  margin: 0 0 25px 0;
+`
+
+const Content = styled('div')`
   margin-top: 20px;
-  padding: 20px;
 `
 
 export {HouseScreen}

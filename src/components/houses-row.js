@@ -37,6 +37,12 @@ const useStyles = makeStyles({
   cardActions: {
     justifyContent: 'flex-end',
   },
+  cardActionArea: {
+    textAlign: 'center'
+  },
+  text: {
+    fontFamily: 'got-font'
+  }
 })
 
 function HousesRow({house}) {
@@ -45,7 +51,7 @@ function HousesRow({house}) {
 
   return (
     <Card className={classes.root} variant='outlined'>
-      <CardActionArea>
+      <CardActionArea className={classes.cardActionArea}>
         <CardMedia className={classes.mediaCard}
                    component='img'
                    alt='Contemplative Reptile'
@@ -54,11 +60,8 @@ function HousesRow({house}) {
                    title='Contemplative Reptile'
         />
         <CardContent>
-          <Typography gutterBottom variant='h5' component='h2'>
+          <Typography className={classes.text} gutterBottom variant='h5' component='h2'>
             {house.name}
-          </Typography>
-          <Typography variant='body2' color='inherit' component='p'>
-            {house.words}
           </Typography>
         </CardContent>
       </CardActionArea>

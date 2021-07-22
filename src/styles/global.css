@@ -4,3 +4,8 @@ body, html {
     padding: 0;
     background-color: #0B1A25;
 }
+
+@font-face {
+    font-family: 'got-font';
+    src: local('got-font'), url('./fonts/got.ttf')  format('truetype');
+}

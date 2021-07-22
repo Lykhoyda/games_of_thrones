@@ -1,11 +1,12 @@
 import React, {useEffect} from 'react'
 import {useHouses} from '../utils/houses'
 import {HousesRow} from '../components/houses-row'
-import {HousesUL, Spinner} from '../components/lib'
+import {FullPageSpinner, HousesUL, Wrapper} from '../components/lib'
 import styled from '@emotion/styled'
 import {getIdFromURL} from '../utils/url'
 import gotLogoGold from 'assets/got-logo-gold.png'
 import {PaginationCustom} from '../components/pagination'
+import {Grid} from '@material-ui/core'
 
 function OverviewScreen() {
   const [page, setPage] = React.useState(1)
@@ -15,53 +16,41 @@ function OverviewScreen() {
     refetch(page)
   }, [page, refetch])
 
-  if (isLoading) {
-    return (
-      <SpinnerContainer>
-        <Spinner />
-      </SpinnerContainer>
-    )
-  }
+  if (isLoading) return <FullPageSpinner />
 
   return (
-    <MainContent>
+    <Wrapper>
       <Header>
         <Logo src={gotLogoGold} />
       </Header>
       <HousesUL>
-        {houses?.map(house => (
-          <li key={`${house.name}-${getIdFromURL(house.url)}`} aria-label={house.name}>
-            <HousesRow house={house} />
-          </li>))}
+        <Grid container direction='row' justifyContent='center' spacing={3}>
+          {houses?.map(house => (
+            <Grid item xs={12} sm={6} md={4} justifyContent='center' al>
+              <ListItem key={`${house.name}-${getIdFromURL(house.url)}`} aria-label={house.name}>
+                <HousesRow house={house} />
+              </ListItem>
+            </Grid>))}
+        </Grid>
       </HousesUL>
       <PaginationCustom page={page} setPage={setPage} />
-    </MainContent>
+    </Wrapper>
   )
 }
-
-const MainContent = styled('div')`
-  max-width: 1200px;
-  width: 100%;
-  margin: auto;
-  padding: 0 0 40px 0;
-`
 
 const Header = styled('header')`
   text-align: center;
 `
 
-const Logo = styled('img')`
-  margin: 20px auto;
-  display: block;
-  max-width: 320px;
-  width: 100%;
+const ListItem = styled('li')`
+  display: flex;
+  justify-content: center;
 `
 
-const SpinnerContainer = styled('li')`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+const Logo = styled('img')`
+  margin: 20px auto 40px auto;
+  display: block;
+  max-width: 320px;
   width: 100%;
 `
 
