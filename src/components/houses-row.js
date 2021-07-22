@@ -15,6 +15,7 @@ import {
   Typography,
 } from '@material-ui/core'
 import {getHouseImage} from '../utils/images'
+import PropTypes from 'prop-types'
 
 function HousesRow({house}) {
   const [imgSrc] = useState(() => getHouseImage(house.name))
@@ -87,5 +88,12 @@ const useStyles = makeStyles({
     fontFamily: 'got-font',
   },
 })
+
+HousesRow.propTypes = {
+  house: PropTypes.shape({
+    name: PropTypes.string,
+    url: PropTypes.string,
+  }),
+}
 
 export {HousesRow}

@@ -25,7 +25,7 @@ function getHouseImage(houseName) {
   let imgSrc
 
   imagesCollection.forEach(imgData => {
-    if (houseName.includes(imgData.name)) {
+    if (houseName.toLowerCase().includes(imgData.name.toLowerCase())) {
       imgSrc = imgData.src
     }
   })
