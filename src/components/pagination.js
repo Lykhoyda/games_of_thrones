@@ -1,10 +1,10 @@
 import {Pagination} from '@material-ui/lab'
 import React from 'react'
 import styled from '@emotion/styled'
-import {PAGINATION_STEPS} from '../utils/houses'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import {useTheme} from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
+import {PAGINATION_STEPS} from '../utils/constants'
 
 function PaginationCustom({setPage, page}) {
   const theme = useTheme()

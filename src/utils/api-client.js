@@ -4,6 +4,9 @@ async function client(endpoint, data) {
   const config = {
     method: data ? 'POST' : 'GET',
     body: data ? JSON.stringify(data) : undefined,
+    headers: {
+      'Content-Type': data ? 'application/json' : undefined,
+    },
   }
 
   return window.fetch(`${apiURL}/${endpoint}`, config).then(async response => {

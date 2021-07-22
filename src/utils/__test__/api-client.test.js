@@ -1,7 +1,7 @@
 import {server, rest} from 'test/server'
 import {client} from '../api-client'
 
-const apiURL = process.env.REACT_APP_API_URL
+const apiURL = process.env.REACT_APP_GOT_API_URL
 
 jest.mock('react-query')
 
@@ -20,7 +20,7 @@ test('calls fetch at the endpoint with the arguments for GET requests', async ()
   expect(result).toEqual(mockResult)
 })
 
-test('when data is provided, it is stringified and the method defaults to POST', async () => {
+test('when data is provided, it is stringifies and the method defaults to POST', async () => {
   const endpoint = 'test-endpoint'
   server.use(
     rest.post(`${apiURL}/${endpoint}`, async (req, res, ctx) => {
@@ -29,8 +29,7 @@ test('when data is provided, it is stringified and the method defaults to POST',
   )
   const data = {a: 'b'}
   const result = await client(endpoint, {data})
-
-  expect(result).toEqual(data)
+  expect(result).toEqual({data})
 })
 
 test(`correctly rejects the promise if there's an error`, async () => {
