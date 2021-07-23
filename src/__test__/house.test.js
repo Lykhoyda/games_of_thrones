@@ -20,7 +20,7 @@ test('render page with single house data', async () => {
   ).toBeInTheDocument()
 
   const inDataList = within(screen.getByRole('list'))
-  expect(inDataList.getByTestId(/died out/i)).toHaveTextContent(
+  expect(inDataList.getByTestId(/diedOut/i)).toHaveTextContent(
     testHouse.diedOut,
   )
   expect(inDataList.getByTestId(/founded/i)).toHaveTextContent(

@@ -17,6 +17,7 @@ import {getHouseImage} from '../utils/images'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 import {UNKNOWN} from '../utils/constants'
 import {device} from '../styles/media-queries'
+import {camelCase} from 'lodash'
 
 function HouseScreen() {
   const {houseId} = useParams()
@@ -26,7 +27,7 @@ function HouseScreen() {
   const classes = useStyles()
 
   const renderListItem = (columnName, data) => (
-    <ListItem data-testid={columnName}>
+    <ListItem data-testid={camelCase(columnName)}>
       {columnName}: {data || UNKNOWN}
     </ListItem>
   )
