@@ -33,14 +33,15 @@
       ""
     ],
     "seats": [
-      "Godsgrace"
+      "Godsgrace",
+      "hall"
     ],
     "currentLord": "https://www.anapioficeandfire.com/api/characters/298",
     "heir": "https://www.anapioficeandfire.com/api/characters/1922",
     "overlord": "https://www.anapioficeandfire.com/api/houses/285",
-    "founded": "",
+    "founded": "32bc",
     "founder": "",
-    "diedOut": "",
+    "diedOut": "321",
     "ancestralWeapons": [
       ""
     ],
@@ -62,11 +63,66 @@
       ""
     ],
     "seats": [
-      ""
+      "Godsgrace",
+      "hall"
     ],
     "currentLord": "",
     "heir": "",
     "overlord": "",
+    "founded": "32bc",
+    "founder": "",
+    "diedOut": "232",
+    "ancestralWeapons": [
+      ""
+    ],
+    "cadetBranches": [],
+    "swornMembers": []
+  },
+  {
+    "url": "https://www.anapioficeandfire.com/api/houses/4",
+    "name": "House Ambrose",
+    "region": "The Reach",
+    "coatOfArms": "Or, semy of ants gules",
+    "words": "Never Resting",
+    "titles": [
+      ""
+    ],
+    "seats": [
+      ""
+    ],
+    "currentLord": "https://www.anapioficeandfire.com/api/characters/141",
+    "heir": "",
+    "overlord": "https://www.anapioficeandfire.com/api/houses/398",
+    "founded": "",
+    "founder": "",
+    "diedOut": "",
+    "ancestralWeapons": [
+      ""
+    ],
+    "cadetBranches": [],
+    "swornMembers": [
+      "https://www.anapioficeandfire.com/api/characters/82",
+      "https://www.anapioficeandfire.com/api/characters/102",
+      "https://www.anapioficeandfire.com/api/characters/141",
+      "https://www.anapioficeandfire.com/api/characters/152",
+      "https://www.anapioficeandfire.com/api/characters/344"
+    ]
+  },
+  {
+    "url": "https://www.anapioficeandfire.com/api/houses/5",
+    "name": "House Appleton of Appleton",
+    "region": "The Reach",
+    "coatOfArms": "Or, an apple tree eradicated proper fructed gules, quartered with argent, a gatehouse cendrée",
+    "words": "",
+    "titles": [
+      ""
+    ],
+    "seats": [
+      "Appleton"
+    ],
+    "currentLord": "",
+    "heir": "",
+    "overlord": "https://www.anapioficeandfire.com/api/houses/398",
     "founded": "",
     "founder": "",
     "diedOut": "",
@@ -75,5 +131,308 @@
     ],
     "cadetBranches": [],
     "swornMembers": []
+  },
+  {
+    "url": "https://www.anapioficeandfire.com/api/houses/6",
+    "name": "House Arryn of Gulltown",
+    "region": "The Vale",
+    "coatOfArms": "",
+    "words": "",
+    "titles": [
+      ""
+    ],
+    "seats": [
+      "Gulltown"
+    ],
+    "currentLord": "",
+    "heir": "",
+    "overlord": "https://www.anapioficeandfire.com/api/houses/7",
+    "founded": "",
+    "founder": "",
+    "diedOut": "",
+    "ancestralWeapons": [
+      ""
+    ],
+    "cadetBranches": [],
+    "swornMembers": []
+  },
+  {
+    "url": "https://www.anapioficeandfire.com/api/houses/7",
+    "name": "House Arryn of the Eyrie",
+    "region": "The Vale",
+    "coatOfArms": "A sky-blue falcon soaring against a white moon, on a sky-blue field(Bleu celeste, upon a plate a falcon volant of the field)",
+    "words": "As High as Honor",
+    "titles": [
+      "King of Mountain and Vale (formerly)",
+      "Lord of the Eyrie",
+      "Defender of the Vale",
+      "Warden of the East"
+    ],
+    "seats": [
+      "The Eyrie (summer)",
+      "Gates of the Moon (winter)"
+    ],
+    "currentLord": "https://www.anapioficeandfire.com/api/characters/894",
+    "heir": "https://www.anapioficeandfire.com/api/characters/477",
+    "overlord": "https://www.anapioficeandfire.com/api/houses/16",
+    "founded": "Coming of the Andals",
+    "founder": "https://www.anapioficeandfire.com/api/characters/144",
+    "diedOut": "",
+    "ancestralWeapons": [
+      ""
+    ],
+    "cadetBranches": [
+      "https://www.anapioficeandfire.com/api/houses/6"
+    ],
+    "swornMembers": [
+      "https://www.anapioficeandfire.com/api/characters/49",
+      "https://www.anapioficeandfire.com/api/characters/92",
+      "https://www.anapioficeandfire.com/api/characters/93",
+      "https://www.anapioficeandfire.com/api/characters/107",
+      "https://www.anapioficeandfire.com/api/characters/223",
+      "https://www.anapioficeandfire.com/api/characters/265",
+      "https://www.anapioficeandfire.com/api/characters/300",
+      "https://www.anapioficeandfire.com/api/characters/356",
+      "https://www.anapioficeandfire.com/api/characters/477",
+      "https://www.anapioficeandfire.com/api/characters/508",
+      "https://www.anapioficeandfire.com/api/characters/540",
+      "https://www.anapioficeandfire.com/api/characters/548",
+      "https://www.anapioficeandfire.com/api/characters/558",
+      "https://www.anapioficeandfire.com/api/characters/572",
+      "https://www.anapioficeandfire.com/api/characters/688",
+      "https://www.anapioficeandfire.com/api/characters/894",
+      "https://www.anapioficeandfire.com/api/characters/1068",
+      "https://www.anapioficeandfire.com/api/characters/1193",
+      "https://www.anapioficeandfire.com/api/characters/1280",
+      "https://www.anapioficeandfire.com/api/characters/1443",
+      "https://www.anapioficeandfire.com/api/characters/1655",
+      "https://www.anapioficeandfire.com/api/characters/1693",
+      "https://www.anapioficeandfire.com/api/characters/1715",
+      "https://www.anapioficeandfire.com/api/characters/1884"
+    ]
+  },
+  {
+    "url": "https://www.anapioficeandfire.com/api/houses/8",
+    "name": "House Ashford of Ashford",
+    "region": "The Reach",
+    "coatOfArms": "Tenny, a sun in splendour beneath a chevron inverted argent",
+    "words": "Our Sun Shines Bright",
+    "titles": [
+      "Lord of Ashford"
+    ],
+    "seats": [
+      "Ashford"
+    ],
+    "currentLord": "",
+    "heir": "",
+    "overlord": "https://www.anapioficeandfire.com/api/houses/398",
+    "founded": "",
+    "founder": "",
+    "diedOut": "",
+    "ancestralWeapons": [
+      ""
+    ],
+    "cadetBranches": [],
+    "swornMembers": [
+      "https://www.anapioficeandfire.com/api/characters/121",
+      "https://www.anapioficeandfire.com/api/characters/641",
+      "https://www.anapioficeandfire.com/api/characters/895",
+      "https://www.anapioficeandfire.com/api/characters/1812"
+    ]
+  },
+  {
+    "url": "https://www.anapioficeandfire.com/api/houses/9",
+    "name": "House Ashwood",
+    "region": "The North",
+    "coatOfArms": "",
+    "words": "",
+    "titles": [
+      ""
+    ],
+    "seats": [
+      ""
+    ],
+    "currentLord": "",
+    "heir": "",
+    "overlord": "https://www.anapioficeandfire.com/api/houses/34",
+    "founded": "",
+    "founder": "",
+    "diedOut": "",
+    "ancestralWeapons": [
+      ""
+    ],
+    "cadetBranches": [],
+    "swornMembers": []
+  },
+  {
+    "url": "https://www.anapioficeandfire.com/api/houses/10",
+    "name": "House Baelish of Harrenhal",
+    "region": "The Riverlands",
+    "coatOfArms": "A field of silver mockingbirds, on a green field(Vert, semé of mockingbirds argent)",
+    "words": "",
+    "titles": [
+      "Lord Paramount of the Trident",
+      "Lord of Harrenhal"
+    ],
+    "seats": [
+      "Harrenhal"
+    ],
+    "currentLord": "https://www.anapioficeandfire.com/api/characters/823",
+    "heir": "",
+    "overlord": "https://www.anapioficeandfire.com/api/houses/16",
+    "founded": "299 AC",
+    "founder": "https://www.anapioficeandfire.com/api/characters/823",
+    "diedOut": "",
+    "ancestralWeapons": [
+      ""
+    ],
+    "cadetBranches": [],
+    "swornMembers": [
+      "https://www.anapioficeandfire.com/api/characters/651",
+      "https://www.anapioficeandfire.com/api/characters/804",
+      "https://www.anapioficeandfire.com/api/characters/823",
+      "https://www.anapioficeandfire.com/api/characters/957",
+      "https://www.anapioficeandfire.com/api/characters/970"
+    ]
+  },
+  {
+    "url": "https://www.anapioficeandfire.com/api/houses/11",
+    "name": "House Baelish of the Fingers",
+    "region": "The Vale",
+    "coatOfArms": "A grey stone head with fiery eyes, on a light green field(Vert, a stone head cendrée, orbed gules)",
+    "words": "",
+    "titles": [
+      ""
+    ],
+    "seats": [
+      "unnamed tower"
+    ],
+    "currentLord": "https://www.anapioficeandfire.com/api/characters/823",
+    "heir": "",
+    "overlord": "https://www.anapioficeandfire.com/api/houses/7",
+    "founded": "",
+    "founder": "https://www.anapioficeandfire.com/api/characters/1182",
+    "diedOut": "",
+    "ancestralWeapons": [
+      ""
+    ],
+    "cadetBranches": [
+      "https://www.anapioficeandfire.com/api/houses/10"
+    ],
+    "swornMembers": [
+      "https://www.anapioficeandfire.com/api/characters/688",
+      "https://www.anapioficeandfire.com/api/characters/823",
+      "https://www.anapioficeandfire.com/api/characters/1240",
+      "https://www.anapioficeandfire.com/api/characters/1249",
+      "https://www.anapioficeandfire.com/api/characters/1448",
+      "https://www.anapioficeandfire.com/api/characters/1581",
+      "https://www.anapioficeandfire.com/api/characters/1719",
+      "https://www.anapioficeandfire.com/api/characters/2052"
+    ]
+  },
+  {
+    "url": "https://www.anapioficeandfire.com/api/houses/12",
+    "name": "House Ball",
+    "region": "The Reach",
+    "coatOfArms": "Three white plates upon a chevron red on a white field",
+    "words": "",
+    "titles": [
+      ""
+    ],
+    "seats": [
+      ""
+    ],
+    "currentLord": "",
+    "heir": "",
+    "overlord": "https://www.anapioficeandfire.com/api/houses/398",
+    "founded": "",
+    "founder": "",
+    "diedOut": "",
+    "ancestralWeapons": [
+      ""
+    ],
+    "cadetBranches": [],
+    "swornMembers": [
+      "https://www.anapioficeandfire.com/api/characters/842"
+    ]
+  },
+  {
+    "url": "https://www.anapioficeandfire.com/api/houses/13",
+    "name": "House Banefort of Banefort",
+    "region": "The Westerlands",
+    "coatOfArms": "A black hooded man, on a grey field, within a fiery tressure(Cendrée, a hooded man sable within a tressure rayonné along the outer edge gules)",
+    "words": "",
+    "titles": [
+      "Lord of Banefort"
+    ],
+    "seats": [
+      "Banefort"
+    ],
+    "currentLord": "https://www.anapioficeandfire.com/api/characters/837",
+    "heir": "",
+    "overlord": "https://www.anapioficeandfire.com/api/houses/229",
+    "founded": "",
+    "founder": "https://www.anapioficeandfire.com/api/characters/497",
+    "diedOut": "",
+    "ancestralWeapons": [
+      ""
+    ],
+    "cadetBranches": [],
+    "swornMembers": [
+      "https://www.anapioficeandfire.com/api/characters/497",
+      "https://www.anapioficeandfire.com/api/characters/837"
+    ]
+  },
+  {
+    "url": "https://www.anapioficeandfire.com/api/houses/14",
+    "name": "House Bar Emmon of Sharp Point",
+    "region": "The Crownlands",
+    "coatOfArms": "Fretty argent and white, a swordfish embowed haurient azure",
+    "words": "",
+    "titles": [
+      "Lord of Sharp Point"
+    ],
+    "seats": [
+      "Sharp Point"
+    ],
+    "currentLord": "https://www.anapioficeandfire.com/api/characters/332",
+    "heir": "",
+    "overlord": "https://www.anapioficeandfire.com/api/houses/15",
+    "founded": "",
+    "founder": "",
+    "diedOut": "",
+    "ancestralWeapons": [
+      ""
+    ],
+    "cadetBranches": [],
+    "swornMembers": [
+      "https://www.anapioficeandfire.com/api/characters/332"
+    ]
+  },
+  {
+    "url": "https://www.anapioficeandfire.com/api/houses/15",
+    "name": "House Baratheon of Dragonstone",
+    "region": "The Crownlands",
+    "coatOfArms": "Or, a heart gules enflamed proper charged with a stag's head sable crowned of the field",
+    "words": "",
+    "titles": [
+      "Lord of Dragonstone",
+      "King of Westeros"
+    ],
+    "seats": [
+      "Dragonstone"
+    ],
+    "currentLord": "https://www.anapioficeandfire.com/api/characters/1963",
+    "heir": "https://www.anapioficeandfire.com/api/characters/975",
+    "overlord": "https://www.anapioficeandfire.com/api/houses/16",
+    "founded": "284 AC",
+    "founder": "https://www.anapioficeandfire.com/api/characters/1963",
+    "diedOut": "",
+    "ancestralWeapons": [
+      ""
+    ],
+    "cadetBranches": [],
+    "swornMembers": [
+    ]
   }
 ]

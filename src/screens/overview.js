@@ -26,11 +26,14 @@ function OverviewScreen() {
       <HousesUL>
         <Grid container direction="row" justifyContent="center" spacing={3}>
           {houses?.map(house => (
-            <Grid item xs={12} sm={6} md={4} justifyContent="center" al>
-              <ListItem
-                key={`${house.name}-${getIdFromURL(house.url)}`}
-                aria-label={house.name}
-              >
+            <Grid
+              key={`${house.name}-${getIdFromURL(house.url)}`}
+              item
+              xs={12}
+              sm={6}
+              md={4}
+            >
+              <ListItem aria-label={house.name}>
                 <HousesRow house={house} />
               </ListItem>
             </Grid>

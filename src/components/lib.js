@@ -84,6 +84,7 @@ function FullPageSpinner() {
   return (
     <FullPageSpinnerWrapper>
       <Spinner />
+      loading
     </FullPageSpinnerWrapper>
   )
 }

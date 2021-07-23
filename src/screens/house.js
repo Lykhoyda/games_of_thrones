@@ -26,7 +26,7 @@ function HouseScreen() {
   const classes = useStyles()
 
   const renderListItem = (columnName, data) => (
-    <ListItem>
+    <ListItem data-testid={columnName}>
       {columnName}: {data || UNKNOWN}
     </ListItem>
   )
@@ -48,7 +48,7 @@ function HouseScreen() {
         <Paper className={classes.root}>
           <Grid>
             <LogoColumn>
-              <HouseLogo src={getHouseImage(name)} alt={`house-${name}`} />
+              <HouseLogo src={getHouseImage(name)} alt={`house image`} />
               <Typography
                 className={classes.text}
                 gutterBottom
